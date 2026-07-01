@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>描摹植物与自然的形容词 · Adjectives for Describing Plants & Nature</title>
+    <style>
+        :root {
+            --bg: #f9f8f4;
+            --card-bg: #ffffff;
+            --text: #3a3a3a;
+            --text-light: #6b6b6b;
+            --accent: #4a7c59;
+            --accent-light: #e8f0e4;
+            --border: #e0dcd0;
+            --pinyin: #8b8b8b;
+            --decon-bg: #fafaf7;
+            --decon-border: #e8e4d8;
+            --heading: #2c2c2c;
+            --badge: #c76b4a;
+            --badge-bg: #fdf3ef;
+            --chip: #e8edf2;
+            --chip-text: #4a6a82;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 1.5rem 1rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem 1rem;
+            background: var(--card-bg);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+        .header .icon-row { font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: 0.2em; }
+        .header h1 { font-size: 1.8rem; font-weight: 700; color: var(--heading); margin-bottom: 0.3rem; }
+        .header .subtitle { font-size: 1rem; color: var(--text-light); font-style: italic; }
+        .header .description { margin-top: 0.8rem; font-size: 0.9rem; color: var(--text-light); max-width: 580px; margin-left: auto; margin-right: auto; }
+
+        .nav-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .nav-chip {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 18px;
+            background: var(--chip);
+            color: var(--chip-text);
+            font-size: 0.82rem;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+        }
+        .nav-chip:hover { background: #d0dbe6; }
+
+        .section {
+            margin-bottom: 2.5rem;
+            padding-top: 0.5rem;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-light);
+        }
+        .section-header .emoji {
+            font-size: 1.6rem;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f3ed;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .section-header h2 { font-size: 1.3rem; font-weight: 700; color: var(--heading); }
+        .section-header .vs { color: var(--badge); font-weight: 400; font-size: 1rem; }
+        .section-desc { font-size: 0.88rem; color: var(--text-light); margin-bottom: 1rem; font-style: italic; }
+
+        .word-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .word-card.star-word { border-left: 4px solid var(--badge); background: #fffdfb; }
+
+        .word-main {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.6rem;
+            margin-bottom: 0.4rem;
+        }
+        .word-zh { font-size: 1.6rem; font-weight: 700; color: var(--heading); letter-spacing: 0.04em; }
+        .word-pinyin { font-size: 0.9rem; color: var(--pinyin); font-style: italic; }
+        .word-en { font-size: 0.9rem; color: var(--text-light); font-style: italic; }
+        .star-badge {
+            display: inline-block;
+            background: var(--badge-bg);
+            color: var(--badge);
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            vertical-align: middle;
+            margin-left: 0.3rem;
+        }
+
+        .meanings {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 560px) { .meanings { grid-template-columns: 1fr; } }
+        .meaning-zh { color: var(--text); }
+        .meaning-en { color: var(--text-light); font-style: italic; }
+        .meaning-label {
+            font-weight: 600;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.1rem;
+            font-style: normal;
+        }
+
+        .deconstruction {
+            background: var(--decon-bg);
+            border: 1px solid var(--decon-border);
+            border-radius: 7px;
+            padding: 0.6rem 0.9rem;
+            font-size: 0.84rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+        .deconstruction .decon-label {
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #8b7355;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .char-break {
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 0.1rem 0.4rem;
+            margin: 0 0.15rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .deconstruction .plus { color: #999; margin: 0 0.1rem; }
+        .deconstruction .equals { color: #666; margin: 0 0.2rem; font-weight: 700; }
+        .deconstruction .result { font-weight: 700; color: var(--heading); }
+
+        .footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.2rem;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 500px) {
+            body { padding: 0.8rem 0.5rem; }
+            .header { padding: 1.2rem 0.8rem; }
+            .header h1 { font-size: 1.4rem; }
+            .word-zh { font-size: 1.3rem; }
+            .word-card { padding: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="icon-row">🌿🌳🍃🌸🌵🍂🌾</div>
+        <h1>描摹植物与自然的形容词</h1>
+        <p class="subtitle"><em>Adjectives for Describing Plants &amp; Nature</em></p>
+        <p class="description">
+            A bilingual vocabulary guide for learners of all ages.
+            Each entry includes pinyin, definitions in Chinese and English, and a
+            <strong>word deconstruction</strong> that breaks characters apart to reveal their meaning.
+        </p>
+    </header>
+
+    <nav class="nav-chips">
+        <a href="#sec-strong-weak" class="nav-chip">💪 强壮 vs 弱小</a>
+        <a href="#sec-thick-sparse" class="nav-chip">🌳 茂密 vs 稀疏</a>
+        <a href="#sec-color" class="nav-chip">🎨 色彩</a>
+        <a href="#sec-shape" class="nav-chip">🩰 形状与姿态</a>
+        <a href="#sec-touch" class="nav-chip">🖐️ 触感</a>
+        <a href="#sec-compounds" class="nav-chip">📝 好词连用</a>
+        <a href="#sec-weather" class="nav-chip">🌦️ 天气</a>
+        <a href="#sec-landscape" class="nav-chip">🏔️ 地貌</a>
+        <a href="#sec-elements" class="nav-chip">💧 自然元素</a>
+    </nav>
+
+    <main>
+
+        <!-- ===== 1. Strong vs Weak ===== -->
+        <div class="section" id="sec-strong-weak">
+            <div class="section-header">
+                <span class="emoji">💪</span>
+                <h2>强壮 <span class="vs">🆚</span> 弱小</h2>
+            </div>
+            <p class="section-desc">Strong vs. Weak — Is the plant thriving with energy, or is it struggling?</p>
+
+            <div class="word-card star-word">
+                <div class="word-main">
+                    <span class="word-zh">繁茂</span>
+                    <span class="star-badge">⭐ START</span>
+                    <span class="word-pinyin">fánmào</span>
+                    <span class="word-en"><em>lush; luxuriant; dense and thriving</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(植物) 长得多、长得好、很旺盛的样子。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of plants) Growing abundantly, healthily, and vigorously.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">繁</span> <span class="plus">+</span> <span class="char-break">茂</span> <span class="equals">=</span> <span class="result">繁茂</span>
+                    <br>
+                    繁 (fán) = numerous; abundant; complex &nbsp;|&nbsp; 茂 (mào) = lush; flourishing; thick
+                    <br>
+                    → <em>So abundant it's flourishing.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">茂盛</span>
+                    <span class="word-pinyin">màoshèng</span>
+                    <span class="word-en"><em>flourishing; exuberant</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>植物长得很兴旺、很丰满的样子。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Plants growing in a thriving, full state.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">茂</span> <span class="plus">+</span> <span class="char-break">盛</span> <span class="equals">=</span> <span class="result">茂盛</span>
+                    <br>
+                    茂 (mào) = lush; flourishing &nbsp;|&nbsp; 盛 (shèng) = abundant; vigorous; grand
+                    <br>
+                    → <em>Flourishing with abundance.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">旺盛</span>
+                    <span class="word-pinyin">wàngshèng</span>
+                    <span class="word-en"><em>vigorous; full of vitality</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>生命力强，精神十足的样子。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Full of strong life force and energy.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">旺</span> <span class="plus">+</span> <span class="char-break">盛</span> <span class="equals">=</span> <span class="result">旺盛</span>
+                    <br>
+                    旺 (wàng) = vigorous; prosperous; blazing &nbsp;|&nbsp; 盛 (shèng) = abundant; vigorous
+                    <br>
+                    → <em>Blazing with vigor.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">茁壮</span>
+                    <span class="word-pinyin">zhuózhuàng</span>
+                    <span class="word-en"><em>sturdy and robust; healthy and strong</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(年轻人、动植物) 长得结实、强壮。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of young living things) Growing solidly and strongly.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">茁</span> <span class="plus">+</span> <span class="char-break">壮</span> <span class="equals">=</span> <span class="result">茁壮</span>
+                    <br>
+                    茁 (zhuó) = sprouting; healthy growth &nbsp;|&nbsp; 壮 (zhuàng) = strong; robust; sturdy
+                    <br>
+                    → <em>Growing up strong.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">生机勃勃</span>
+                    <span class="word-pinyin">shēngjī bóbó</span>
+                    <span class="word-en"><em>vibrant; full of life</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>生命力非常充足，很有活力的样子。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Overflowing with life force and vitality.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">生机</span> <span class="plus">+</span> <span class="char-break">勃勃</span> <span class="equals">=</span> <span class="result">生机勃勃</span>
+                    <br>
+                    生机 (shēngjī) = vitality; life force &nbsp;|&nbsp; 勃勃 (bóbó) = exuberant; thriving
+                    <br>
+                    → <em>Vitality thrums and thrives.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">枯萎</span>
+                    <span class="word-pinyin">kūwěi</span>
+                    <span class="word-en"><em>withered; wilted</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>植物因为缺水或衰老而变干、变黄、低下头的状态。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Plants becoming dry, yellow, and droopy due to lack of water or age.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">枯</span> <span class="plus">+</span> <span class="char-break">萎</span> <span class="equals">=</span> <span class="result">枯萎</span>
+                    <br>
+                    枯 (kū) = dried up; withered &nbsp;|&nbsp; 萎 (wěi) = wilted; drooping
+                    <br>
+                    → <em>Dried up and drooping.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">奄奄一息</span>
+                    <span class="word-pinyin">yǎnyǎn yī xī</span>
+                    <span class="word-en"><em>on its last legs; dying; barely breathing</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>呼吸很微弱，只剩最后一口气了，快要死去的状态。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Breathing so weakly that only a last breath remains.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">奄奄</span> <span class="plus">+</span> <span class="char-break">一</span> <span class="plus">+</span> <span class="char-break">息</span> <span class="equals">=</span> <span class="result">奄奄一息</span>
+                    <br>
+                    奄奄 (yǎnyǎn) = gasping; faint &nbsp;|&nbsp; 一 (yī) = one &nbsp;|&nbsp; 息 (xī) = breath
+                    <br>
+                    → <em>Gasping with only one breath left.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">病恹恹</span>
+                    <span class="word-pinyin">bìng yānyān</span>
+                    <span class="word-en"><em>sickly-looking; languishing</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>看起来像生病了一样，无精打采的。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Looking as if sick; listless and lacking energy.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">病</span> <span class="plus">+</span> <span class="char-break">恹恹</span> <span class="equals">=</span> <span class="result">病恹恹</span>
+                    <br>
+                    病 (bìng) = sick; illness &nbsp;|&nbsp; 恹恹 (yānyān) = weak and weary; languid
+                    <br>
+                    → <em>Sick and weary-looking.</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 2. Thick vs Sparse ===== -->
+        <div class="section" id="sec-thick-sparse">
+            <div class="section-header">
+                <span class="emoji">🌳</span>
+                <h2>茂密 <span class="vs">🆚</span> 稀疏</h2>
+            </div>
+            <p class="section-desc">Thick vs. Sparse — Is the foliage tightly packed, or loosely scattered?</p>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">茂密</span>
+                    <span class="word-pinyin">màomì</span>
+                    <span class="word-en"><em>dense; thick (of foliage)</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(树木、叶子) 长得又多又密，很难看透过去。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of trees, leaves) So many and close together it's hard to see through.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">茂</span> <span class="plus">+</span> <span class="char-break">密</span> <span class="equals">=</span> <span class="result">茂密</span>
+                    <br>
+                    茂 (mào) = lush; flourishing &nbsp;|&nbsp; 密 (mì) = dense; close; tight
+                    <br>
+                    → <em>Lushly dense.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">浓密</span>
+                    <span class="word-pinyin">nóngmì</span>
+                    <span class="word-en"><em>thick and dense</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>非常稠密，又厚又密实的感觉。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Very dense, with a feeling of thickness and compactness.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">浓</span> <span class="plus">+</span> <span class="char-break">密</span> <span class="equals">=</span> <span class="result">浓密</span>
+                    <br>
+                    浓 (nóng) = concentrated; thick &nbsp;|&nbsp; 密 (mì) = dense; close
+                    <br>
+                    → <em>Concentrated and dense.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">密不透风</span>
+                    <span class="word-pinyin">mì bù tòu fēng</span>
+                    <span class="word-en"><em>so dense that wind cannot pass through</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>太密集了，连风都吹不过去。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>So dense that even the wind cannot penetrate.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">密</span> <span class="plus">+</span> <span class="char-break">不</span> <span class="plus">+</span> <span class="char-break">透</span> <span class="plus">+</span> <span class="char-break">风</span> <span class="equals">=</span> <span class="result">密不透风</span>
+                    <br>
+                    密 (mì) = dense &nbsp;|&nbsp; 不 (bù) = not &nbsp;|&nbsp; 透 (tòu) = to pass through &nbsp;|&nbsp; 风 (fēng) = wind
+                    <br>
+                    → <em>Dense, wind cannot pass.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">稀疏</span>
+                    <span class="word-pinyin">xīshū</span>
+                    <span class="word-en"><em>sparse; thin; scattered</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>东西之间空隙大，不密集。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Having large gaps between things; not dense.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">稀</span> <span class="plus">+</span> <span class="char-break">疏</span> <span class="equals">=</span> <span class="result">稀疏</span>
+                    <br>
+                    稀 (xī) = sparse; rare; watery &nbsp;|&nbsp; 疏 (shū) = sparse; scattered; thin
+                    <br>
+                    → <em>Doubly sparse and scattered.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">光秃秃</span>
+                    <span class="word-pinyin">guāng tūtū</span>
+                    <span class="word-en"><em>bare; bald</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>上面什么都没有，光光的。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>With nothing on top; completely bare.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">光</span> <span class="plus">+</span> <span class="char-break">秃秃</span> <span class="equals">=</span> <span class="result">光秃秃</span>
+                    <br>
+                    光 (guāng) = bare; empty &nbsp;|&nbsp; 秃秃 (tūtū) = bald; bare
+                    <br>
+                    → <em>Bare and bald.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">疏疏落落</span>
+                    <span class="word-pinyin">shūshū luòluò</span>
+                    <span class="word-en"><em>sparse and scattered; few and far between</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>稀稀拉拉的，一个一个分散得很开。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Widely scattered, one here and one there.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">疏疏</span> <span class="plus">+</span> <span class="char-break">落落</span> <span class="equals">=</span> <span class="result">疏疏落落</span>
+                    <br>
+                    疏疏 (shūshū) = sparse &nbsp;|&nbsp; 落落 (luòluò) = scattered; falling here and there
+                    <br>
+                    → <em>Sparsely scattered about.</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 3. Color ===== -->
+        <div class="section" id="sec-color">
+            <div class="section-header">
+                <span class="emoji">🎨</span>
+                <h2>色彩</h2>
+            </div>
+            <p class="section-desc">Color &amp; Brightness — Vivid and glossy, or dull and faded?</p>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">翠绿</span>
+                    <span class="word-pinyin">cuìlǜ</span>
+                    <span class="word-en"><em>emerald green; vivid jade-green</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>像翡翠宝石一样的亮绿色，很鲜艳。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A bright green like jade gemstones; very vivid.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">翠</span> <span class="plus">+</span> <span class="char-break">绿</span> <span class="equals">=</span> <span class="result">翠绿</span>
+                    <br>
+                    翠 (cuì) = jade; emerald; vivid blue-green &nbsp;|&nbsp; 绿 (lǜ) = green
+                    <br>
+                    → <em>Jade green.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">葱郁</span>
+                    <span class="word-pinyin">cōngyù</span>
+                    <span class="word-en"><em>verdant; lush and green</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(山坡、树林) 绿色很浓，长得很茂盛的样子。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of hillsides, forests) Deeply green and growing lushly.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">葱</span> <span class="plus">+</span> <span class="char-break">郁</span> <span class="equals">=</span> <span class="result">葱郁</span>
+                    <br>
+                    葱 (cōng) = deep green of scallions &nbsp;|&nbsp; 郁 (yù) = lush; dense
+                    <br>
+                    → <em>Scallion-green and lush.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">嫩绿</span>
+                    <span class="word-pinyin">nènlǜ</span>
+                    <span class="word-en"><em>tender light green; new green</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>像刚长出来的小芽一样，淡淡的、软软的绿色。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A light, soft green like a newly sprouted bud.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">嫩</span> <span class="plus">+</span> <span class="char-break">绿</span> <span class="equals">=</span> <span class="result">嫩绿</span>
+                    <br>
+                    嫩 (nèn) = tender; delicate; young &nbsp;|&nbsp; 绿 (lǜ) = green
+                    <br>
+                    → <em>Tender young green.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">鲜艳</span>
+                    <span class="word-pinyin">xiānyàn</span>
+                    <span class="word-en"><em>bright and colorful; vivid</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(颜色) 又新鲜又明亮，很引人注目。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of color) Fresh and bright; eye-catching.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">鲜</span> <span class="plus">+</span> <span class="char-break">艳</span> <span class="equals">=</span> <span class="result">鲜艳</span>
+                    <br>
+                    鲜 (xiān) = fresh; bright &nbsp;|&nbsp; 艳 (yàn) = gorgeous; colorful
+                    <br>
+                    → <em>Fresh and gorgeous.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">油亮</span>
+                    <span class="word-pinyin">yóuliàng</span>
+                    <span class="word-en"><em>glossy; shiny (as if oiled)</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>表面有光泽，亮亮的，好像涂了一层薄薄的油。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Having a shiny surface, as if polished with oil.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">油</span> <span class="plus">+</span> <span class="char-break">亮</span> <span class="equals">=</span> <span class="result">油亮</span>
+                    <br>
+                    油 (yóu) = oil; grease &nbsp;|&nbsp; 亮 (liàng) = bright; shiny
+                    <br>
+                    → <em>Oil-shiny.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">枯黄</span>
+                    <span class="word-pinyin">kūhuáng</span>
+                    <span class="word-en"><em>withered and yellow; brownish-yellow</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>植物干枯后变成的黄褐色。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>The yellowish-brown plants turn when dried and withered.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">枯</span> <span class="plus">+</span> <span class="char-break">黄</span> <span class="equals">=</span> <span class="result">枯黄</span>
+                    <br>
+                    枯 (kū) = dried up; withered &nbsp;|&nbsp; 黄 (huáng) = yellow
+                    <br>
+                    → <em>Withered yellow.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">黯淡</span>
+                    <span class="word-pinyin">àndàn</span>
+                    <span class="word-en"><em>dull; dim; lackluster</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>没有光泽，颜色不亮，看起来灰灰的。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Lacking luster; colors not bright, looking grayish.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">黯</span> <span class="plus">+</span> <span class="char-break">淡</span> <span class="equals">=</span> <span class="result">黯淡</span>
+                    <br>
+                    黯 (àn) = gloomy; dim; dark &nbsp;|&nbsp; 淡 (dàn) = light; diluted; dull
+                    <br>
+                    → <em>Gloomy and dull.</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 4. Shape & Pose ===== -->
+        <div class="section" id="sec-shape">
+            <div class="section-header">
+                <span class="emoji">🩰</span>
+                <h2>形状与姿态</h2>
+            </div>
+            <p class="section-desc">Shape &amp; Pose — Standing straight and tall, or bending and twisting?</p>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">挺拔</span>
+                    <span class="word-pinyin">tǐngbá</span>
+                    <span class="word-en"><em>tall and straight; erect</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>站得很直，不弯曲，显得很有精神。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Standing very straight, unbent, looking spirited.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">挺</span> <span class="plus">+</span> <span class="char-break">拔</span> <span class="equals">=</span> <span class="result">挺拔</span>
+                    <br>
+                    挺 (tǐng) = to stand straight &nbsp;|&nbsp; 拔 (bá) = to pull up; to stand tall
+                    <br>
+                    → <em>Standing tall as if pulled upward.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">笔直</span>
+                    <span class="word-pinyin">bǐzhí</span>
+                    <span class="word-en"><em>perfectly straight; ramrod-straight</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>像笔一样直，一点也不弯。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>As straight as a pen; not bent at all.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">笔</span> <span class="plus">+</span> <span class="char-break">直</span> <span class="equals">=</span> <span class="result">笔直</span>
+                    <br>
+                    笔 (bǐ) = pen; writing brush &nbsp;|&nbsp; 直 (zhí) = straight
+                    <br>
+                    → <em>Pen-straight.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">粗壮</span>
+                    <span class="word-pinyin">cūzhuàng</span>
+                    <span class="word-en"><em>thick and stout; burly</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(树干、身体) 又粗又结实，很强壮。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of a trunk, body) Thick and solid; very strong.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">粗</span> <span class="plus">+</span> <span class="char-break">壮</span> <span class="equals">=</span> <span class="result">粗壮</span>
+                    <br>
+                    粗 (cū) = thick; coarse; wide &nbsp;|&nbsp; 壮 (zhuàng) = strong; sturdy
+                    <br>
+                    → <em>Thick and strong.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">修长</span>
+                    <span class="word-pinyin">xiūcháng</span>
+                    <span class="word-en"><em>tall and slender; graceful</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>细长而优美。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Slim, long, and graceful.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">修</span> <span class="plus">+</span> <span class="char-break">长</span> <span class="equals">=</span> <span class="result">修长</span>
+                    <br>
+                    修 (xiū) = slender; long &nbsp;|&nbsp; 长 (cháng) = long; length
+                    <br>
+                    → <em>Slender and long.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">婀娜</span>
+                    <span class="word-pinyin">ēnuó</span>
+                    <span class="word-en"><em>willowy and graceful; sinuous</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(姿态) 柔软优美，随风轻轻摇摆。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of posture) Soft, graceful, and gently swaying.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">婀</span> <span class="plus">+</span> <span class="char-break">娜</span> <span class="equals">=</span> <span class="result">婀娜</span>
+                    <br>
+                    婀 (ē) = graceful; willowy &nbsp;|&nbsp; 娜 (nuó) = elegant; slender; graceful
+                    <br>
+                    → <em>Doubly graceful and willowy.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">垂</span>
+                    <span class="word-pinyin">chuí</span>
+                    <span class="word-en"><em>drooping; hanging down</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>头或枝条向下挂着，低低的。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Head or branches hanging downward, lowered.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">垂</span> <span class="equals">=</span> <span class="result">垂</span>
+                    <br>
+                    垂 (chuí) = to hang down; to droop; to dangle
+                    <br>
+                    → <em>A single character meaning to hang or droop.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">盘曲</span>
+                    <span class="word-pinyin">pánqū</span>
+                    <span class="word-en"><em>twisting and coiling; gnarled</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>弯弯绕绕地卷在一起。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Winding and curling around together.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">盘</span> <span class="plus">+</span> <span class="char-break">曲</span> <span class="equals">=</span> <span class="result">盘曲</span>
+                    <br>
+                    盘 (pán) = to coil; to wind &nbsp;|&nbsp; 曲 (qū) = bent; curved; crooked
+                    <br>
+                    → <em>Coiled and curved.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">歪歪扭扭</span>
+                    <span class="word-pinyin">wāiwāi niǔniǔ</span>
+                    <span class="word-en"><em>crooked; twisted; all askew</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>长得不正，歪来歪去，扭来扭去的。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Growing off-center; bending and twisting all around.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">歪歪</span> <span class="plus">+</span> <span class="char-break">扭扭</span> <span class="equals">=</span> <span class="result">歪歪扭扭</span>
+                    <br>
+                    歪歪 (wāiwāi) = crooked; askew &nbsp;|&nbsp; 扭扭 (niǔniǔ) = twisted; wrenched
+                    <br>
+                    → <em>Crooked and twisted all over.</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 5. Touch ===== -->
+        <div class="section" id="sec-touch">
+            <div class="section-header">
+                <span class="emoji">🖐️</span>
+                <h2>触感</h2>
+            </div>
+            <p class="section-desc">Touch &amp; Texture — Smooth and soft, or rough and prickly?</p>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">光滑</span>
+                    <span class="word-pinyin">guānghuá</span>
+                    <span class="word-en"><em>smooth</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>表面很平很滑，摸起来很舒服。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Surface is flat and slippery; pleasant to touch.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">光</span> <span class="plus">+</span> <span class="char-break">滑</span> <span class="equals">=</span> <span class="result">光滑</span>
+                    <br>
+                    光 (guāng) = smooth; glossy &nbsp;|&nbsp; 滑 (huá) = slippery; smooth
+                    <br>
+                    → <em>Glossy and smooth.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">柔嫩</span>
+                    <span class="word-pinyin">róunèn</span>
+                    <span class="word-en"><em>soft and tender</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>又软又娇嫩，好像轻轻一碰就会受伤。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Soft and delicately tender, as if a light touch would harm it.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">柔</span> <span class="plus">+</span> <span class="char-break">嫩</span> <span class="equals">=</span> <span class="result">柔嫩</span>
+                    <br>
+                    柔 (róu) = soft; flexible; gentle &nbsp;|&nbsp; 嫩 (nèn) = tender; delicate
+                    <br>
+                    → <em>Softly tender.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">毛茸茸</span>
+                    <span class="word-pinyin">máo rōngrōng</span>
+                    <span class="word-en"><em>fuzzy; downy; furry</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>表面上有一层细小的毛，摸起来软软绒绒的。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Having a layer of fine hair; soft and fuzzy to touch.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">毛</span> <span class="plus">+</span> <span class="char-break">茸茸</span> <span class="equals">=</span> <span class="result">毛茸茸</span>
+                    <br>
+                    毛 (máo) = hair; fur &nbsp;|&nbsp; 茸茸 (rōngrōng) = fluffy; downy
+                    <br>
+                    → <em>Hairy and downy-fluffy.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">厚实</span>
+                    <span class="word-pinyin">hòushi</span>
+                    <span class="word-en"><em>thick and sturdy</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>又厚又结实，不薄。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Thick and solid; not thin.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">厚</span> <span class="plus">+</span> <span class="char-break">实</span> <span class="equals">=</span> <span class="result">厚实</span>
+                    <br>
+                    厚 (hòu) = thick; deep &nbsp;|&nbsp; 实 (shi) = solid; substantial
+                    <br>
+                    → <em>Thick and substantial.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">粗糙</span>
+                    <span class="word-pinyin">cūcāo</span>
+                    <span class="word-en"><em>rough; coarse</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>表面不光滑，摸起来剌手。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Surface is not smooth; feels scratchy.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">粗</span> <span class="plus">+</span> <span class="char-break">糙</span> <span class="equals">=</span> <span class="result">粗糙</span>
+                    <br>
+                    粗 (cū) = coarse; rough &nbsp;|&nbsp; 糙 (cāo) = rough; unpolished
+                    <br>
+                    → <em>Coarsely rough.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">多刺</span>
+                    <span class="word-pinyin">duō cì</span>
+                    <span class="word-en"><em>prickly; thorny</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>长了很多尖尖的刺。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Growing many sharp thorns/spines.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">多</span> <span class="plus">+</span> <span class="char-break">刺</span> <span class="equals">=</span> <span class="result">多刺</span>
+                    <br>
+                    多 (duō) = many; much &nbsp;|&nbsp; 刺 (cì) = thorn; spike; to stab
+                    <br>
+                    → <em>Many thorns.</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 6. Compounds ===== -->
+        <div class="section" id="sec-compounds">
+            <div class="section-header">
+                <span class="emoji">📝</span>
+                <h2>好词连用</h2>
+            </div>
+            <p class="section-desc">Compound Phrases — Expressions that combine multiple ideas into one vivid picture.</p>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">枝繁叶茂</span>
+                    <span class="word-pinyin">zhī fán yè mào</span>
+                    <span class="word-en"><em>with lush branches and dense leaves</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>树枝很多，叶子很密，形容树木长得很旺盛。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Branches abundant and leaves dense; a tree growing vigorously.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">枝</span> <span class="plus">+</span> <span class="char-break">繁</span> <span class="plus">+</span> <span class="char-break">叶</span> <span class="plus">+</span> <span class="char-break">茂</span> <span class="equals">=</span> <span class="result">枝繁叶茂</span>
+                    <br>
+                    枝 (zhī) = branch &nbsp;|&nbsp; 繁 (fán) = abundant &nbsp;|&nbsp; 叶 (yè) = leaf &nbsp;|&nbsp; 茂 (mào) = lush
+                    <br>
+                    → <em>Branches abundant, leaves lush.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">根深叶茂</span>
+                    <span class="word-pinyin">gēn shēn yè mào</span>
+                    <span class="word-en"><em>deep roots and lush leaves</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>根扎得深，叶子才茂盛。比喻基础扎实。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Roots are deep, so leaves are lush; a solid foundation.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">根</span> <span class="plus">+</span> <span class="char-break">深</span> <span class="plus">+</span> <span class="char-break">叶</span> <span class="plus">+</span> <span class="char-break">茂</span> <span class="equals">=</span> <span class="result">根深叶茂</span>
+                    <br>
+                    根 (gēn) = root &nbsp;|&nbsp; 深 (shēn) = deep &nbsp;|&nbsp; 叶 (yè) = leaf &nbsp;|&nbsp; 茂 (mào) = lush
+                    <br>
+                    → <em>Roots deep, leaves lush.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">亭亭玉立</span>
+                    <span class="word-pinyin">tíngtíng yùlì</span>
+                    <span class="word-en"><em>slender and graceful</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>身材细长而优美地站着，像玉石雕刻一样。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Standing tall, slender, and graceful, like a jade carving.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">亭亭</span> <span class="plus">+</span> <span class="char-break">玉</span> <span class="plus">+</span> <span class="char-break">立</span> <span class="equals">=</span> <span class="result">亭亭玉立</span>
+                    <br>
+                    亭亭 (tíngtíng) = tall and erect &nbsp;|&nbsp; 玉 (yù) = jade &nbsp;|&nbsp; 立 (lì) = to stand
+                    <br>
+                    → <em>Standing gracefully like jade.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">绿意盎然</span>
+                    <span class="word-pinyin">lǜ yì àng rán</span>
+                    <span class="word-en"><em>bursting with green vitality</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>绿色的生机充满了，到处都是活力的绿。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Green life force overflowing; vibrant green everywhere.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">绿意</span> <span class="plus">+</span> <span class="char-break">盎然</span> <span class="equals">=</span> <span class="result">绿意盎然</span>
+                    <br>
+                    绿意 (lǜ yì) = green vitality &nbsp;|&nbsp; 盎然 (àng rán) = abundant; overflowing
+                    <br>
+                    → <em>Green vitality overflowing.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">弱不禁风</span>
+                    <span class="word-pinyin">ruò bù jīn fēng</span>
+                    <span class="word-en"><em>so fragile a breeze could break it</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>弱得连轻微的风都承受不住，非常娇弱。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>So weak it cannot withstand a light breeze; extremely delicate.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">弱</span> <span class="plus">+</span> <span class="char-break">不</span> <span class="plus">+</span> <span class="char-break">禁</span> <span class="plus">+</span> <span class="char-break">风</span> <span class="equals">=</span> <span class="result">弱不禁风</span>
+                    <br>
+                    弱 (ruò) = weak &nbsp;|&nbsp; 不 (bù) = not &nbsp;|&nbsp; 禁 (jīn) = to withstand &nbsp;|&nbsp; 风 (fēng) = wind
+                    <br>
+                    → <em>Too weak to bear the wind.</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 7. Weather ===== -->
+        <div class="section" id="sec-weather">
+            <div class="section-header">
+                <span class="emoji">🌦️</span>
+                <h2>天气与气候</h2>
+            </div>
+            <p class="section-desc">Weather &amp; Climate — Describing the sky, air, and conditions above.</p>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">晴朗</span>
+                    <span class="word-pinyin">qínglǎng</span>
+                    <span class="word-en"><em>sunny and clear; bright</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>天空没有云，阳光明亮。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Cloudless sky with bright sunshine.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">晴</span> <span class="plus">+</span> <span class="char-break">朗</span> <span class="equals">=</span> <span class="result">晴朗</span>
+                    <br>
+                    晴 (qíng) = clear (sky); fine weather &nbsp;|&nbsp; 朗 (lǎng) = bright; luminous
+                    <br>
+                    → <em>Clear and bright.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">阴沉</span>
+                    <span class="word-pinyin">yīnchén</span>
+                    <span class="word-en"><em>overcast; gloomy; somber</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>天色很暗，云层很厚，看起来像是要下雨。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Dark sky with thick clouds, looking like it might rain.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">阴</span> <span class="plus">+</span> <span class="char-break">沉</span> <span class="equals">=</span> <span class="result">阴沉</span>
+                    <br>
+                    阴 (yīn) = overcast; cloudy; dark &nbsp;|&nbsp; 沉 (chén) = heavy; sinking; deep
+                    <br>
+                    → <em>Dark and heavy.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">潮湿</span>
+                    <span class="word-pinyin">cháoshī</span>
+                    <span class="word-en"><em>humid; damp; moist</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>空气中水气很多，东西摸起来润润的。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Air contains a lot of moisture; things feel damp.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">潮</span> <span class="plus">+</span> <span class="char-break">湿</span> <span class="equals">=</span> <span class="result">潮湿</span>
+                    <br>
+                    潮 (cháo) = moist; tide; damp &nbsp;|&nbsp; 湿 (shī) = wet; damp
+                    <br>
+                    → <em>Moist and damp.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">干旱</span>
+                    <span class="word-pinyin">gānhàn</span>
+                    <span class="word-en"><em>arid; dry; drought-stricken</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>很久没下雨，土地都干裂了。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Long without rain; land is dry and cracked.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">干</span> <span class="plus">+</span> <span class="char-break">旱</span> <span class="equals">=</span> <span class="result">干旱</span>
+                    <br>
+                    干 (gān) = dry &nbsp;|&nbsp; 旱 (hàn) = drought; dry spell
+                    <br>
+                    → <em>Dry and drought-ridden.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">温和</span>
+                    <span class="word-pinyin">wēnhé</span>
+                    <span class="word-en"><em>mild; temperate; gentle</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>不冷不热，很舒服。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Neither hot nor cold; very comfortable.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">温</span> <span class="plus">+</span> <span class="char-break">和</span> <span class="equals">=</span> <span class="result">温和</span>
+                    <br>
+                    温 (wēn) = warm; mild &nbsp;|&nbsp; 和 (hé) = gentle; harmonious
+                    <br>
+                    → <em>Warm and gentle.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">凛冽</span>
+                    <span class="word-pinyin">lǐnliè</span>
+                    <span class="word-en"><em>bitterly cold; piercing</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(寒风) 非常冷，像刀割一样。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of cold wind) So cold it cuts like a knife.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">凛</span> <span class="plus">+</span> <span class="char-break">冽</span> <span class="equals">=</span> <span class="result">凛冽</span>
+                    <br>
+                    凛 (lǐn) = freezing; stern; severe &nbsp;|&nbsp; 冽 (liè) = icy cold; piercing
+                    <br>
+                    → <em>Freezing and piercing cold.</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 8. Landscape ===== -->
+        <div class="section" id="sec-landscape">
+            <div class="section-header">
+                <span class="emoji">🏔️</span>
+                <h2>地貌与风景</h2>
+            </div>
+            <p class="section-desc">Landscape &amp; Scenery — Describing the land beneath our feet.</p>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">肥沃</span>
+                    <span class="word-pinyin">féiwò</span>
+                    <span class="word-en"><em>fertile; rich (soil)</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(土地) 养分很多，适合植物生长。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of land) Rich in nutrients; good for growing plants.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">肥</span> <span class="plus">+</span> <span class="char-break">沃</span> <span class="equals">=</span> <span class="result">肥沃</span>
+                    <br>
+                    肥 (féi) = fat; fertile; rich &nbsp;|&nbsp; 沃 (wò) = fertile; rich; irrigated
+                    <br>
+                    → <em>Rich and fertile.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">贫瘠</span>
+                    <span class="word-pinyin">pínjí</span>
+                    <span class="word-en"><em>barren; infertile; poor (soil)</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(土地) 没有营养，植物很难生长。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of land) Lacking nutrients; hard for plants to grow.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">贫</span> <span class="plus">+</span> <span class="char-break">瘠</span> <span class="equals">=</span> <span class="result">贫瘠</span>
+                    <br>
+                    贫 (pín) = poor; impoverished &nbsp;|&nbsp; 瘠 (jí) = barren; thin; lean
+                    <br>
+                    → <em>Poor and barren.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">辽阔</span>
+                    <span class="word-pinyin">liáokuò</span>
+                    <span class="word-en"><em>vast; expansive; wide</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>范围非常大，一眼望不到边。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>So large in scope you cannot see the edge.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">辽</span> <span class="plus">+</span> <span class="char-break">阔</span> <span class="equals">=</span> <span class="result">辽阔</span>
+                    <br>
+                    辽 (liáo) = distant; far; vast &nbsp;|&nbsp; 阔 (kuò) = wide; broad; expansive
+                    <br>
+                    → <em>Distant and wide.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">崎岖</span>
+                    <span class="word-pinyin">qíqū</span>
+                    <span class="word-en"><em>rugged; uneven; rough (terrain)</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(山路) 不平坦，高高低低，很难走。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of mountain paths) Uneven and bumpy; hard to walk.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">崎</span> <span class="plus">+</span> <span class="char-break">岖</span> <span class="equals">=</span> <span class="result">崎岖</span>
+                    <br>
+                    崎 (qí) = rugged; uneven &nbsp;|&nbsp; 岖 (qū) = precipitous; rugged
+                    <br>
+                    → <em>Rugged and precipitous.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">荒芜</span>
+                    <span class="word-pinyin">huāngwú</span>
+                    <span class="word-en"><em>desolate; barren; overgrown with weeds</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>土地没人打理，长满了野草，很荒凉。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Land untended, overgrown with weeds, desolate.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">荒</span> <span class="plus">+</span> <span class="char-break">芜</span> <span class="equals">=</span> <span class="result">荒芜</span>
+                    <br>
+                    荒 (huāng) = desolate; barren; wild &nbsp;|&nbsp; 芜 (wú) = overgrown with weeds; messy
+                    <br>
+                    → <em>Desolate and overgrown.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">静谧</span>
+                    <span class="word-pinyin">jìngmì</span>
+                    <span class="word-en"><em>quiet; tranquil; serene</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>非常安静，没有吵闹的声音，让人安心。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Very quiet, without noise; gives a sense of peace.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">静</span> <span class="plus">+</span> <span class="char-break">谧</span> <span class="equals">=</span> <span class="result">静谧</span>
+                    <br>
+                    静 (jìng) = quiet; still; calm &nbsp;|&nbsp; 谧 (mì) = serene; peaceful; quiet
+                    <br>
+                    → <em>Quiet and serene.</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 9. Natural Elements ===== -->
+        <div class="section" id="sec-elements">
+            <div class="section-header">
+                <span class="emoji">💧</span>
+                <h2>自然元素</h2>
+            </div>
+            <p class="section-desc">Natural Elements — Water, light, air, and the sensory qualities of nature.</p>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">清澈</span>
+                    <span class="word-pinyin">qīngchè</span>
+                    <span class="word-en"><em>crystal clear; limpid</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(水) 非常干净透明，可以看到底。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of water) So clean and transparent you can see the bottom.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">清</span> <span class="plus">+</span> <span class="char-break">澈</span> <span class="equals">=</span> <span class="result">清澈</span>
+                    <br>
+                    清 (qīng) = clear; pure; clean &nbsp;|&nbsp; 澈 (chè) = limpid; clear; transparent
+                    <br>
+                    → <em>Clear and transparent.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">浑浊</span>
+                    <span class="word-pinyin">húnzhuó</span>
+                    <span class="word-en"><em>murky; turbid; muddy</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(水、空气) 不干净，有很多杂质，看不透。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of water, air) Not clean; full of particles; cannot see through.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">浑</span> <span class="plus">+</span> <span class="char-break">浊</span> <span class="equals">=</span> <span class="result">浑浊</span>
+                    <br>
+                    浑 (hún) = muddy; turbid; mixed-up &nbsp;|&nbsp; 浊 (zhuó) = muddy; turbid; impure
+                    <br>
+                    → <em>Muddy and impure.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">芬芳</span>
+                    <span class="word-pinyin">fēnfāng</span>
+                    <span class="word-en"><em>fragrant; sweet-smelling</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(花、草) 闻起来香香的，很好闻。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of flowers, grass) Smelling sweet and pleasant.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">芬</span> <span class="plus">+</span> <span class="char-break">芳</span> <span class="equals">=</span> <span class="result">芬芳</span>
+                    <br>
+                    芬 (fēn) = fragrance; sweet smell &nbsp;|&nbsp; 芳 (fāng) = fragrant; aromatic
+                    <br>
+                    → <em>Sweet-smelling and aromatic.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">刺鼻</span>
+                    <span class="word-pinyin">cìbí</span>
+                    <span class="word-en"><em>pungent; sharp-smelling; irritating to the nose</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>气味很重，让鼻子不舒服。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A strong smell that irritates the nose.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">刺</span> <span class="plus">+</span> <span class="char-break">鼻</span> <span class="equals">=</span> <span class="result">刺鼻</span>
+                    <br>
+                    刺 (cì) = to stab; to irritate &nbsp;|&nbsp; 鼻 (bí) = nose
+                    <br>
+                    → <em>Stabs the nose.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">明媚</span>
+                    <span class="word-pinyin">míngmèi</span>
+                    <span class="word-en"><em>bright and beautiful; radiant</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(阳光、景色) 又明亮又好看，让人心情愉快。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of sunlight, scenery) Bright and beautiful; lifts the mood.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">明</span> <span class="plus">+</span> <span class="char-break">媚</span> <span class="equals">=</span> <span class="result">明媚</span>
+                    <br>
+                    明 (míng) = bright; clear &nbsp;|&nbsp; 媚 (mèi) = charming; beautiful; enchanting
+                    <br>
+                    → <em>Bright and charming.</em>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">柔和</span>
+                    <span class="word-pinyin">róuhé</span>
+                    <span class="word-en"><em>soft; gentle; mild</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>(光线、声音、风) 轻轻的，不强烈，很舒服。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>(Of light, sound, wind) Light, not intense, very comfortable.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">柔</span> <span class="plus">+</span> <span class="char-break">和</span> <span class="equals">=</span> <span class="result">柔和</span>
+                    <br>
+                    柔 (róu) = soft; gentle &nbsp;|&nbsp; 和 (hé) = gentle; harmonious
+                    <br>
+                    → <em>Soft and gentle.</em>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>🌿 <strong>描摹植物与自然的形容词</strong> · Adjectives for Describing Plants &amp; Nature</p>
+        <p>✦ 繁茂 ✦ 是启动词 · <em>fánmào</em> is the star word that started this collection.</p>
+    </footer>
+
+</body>
+</html>
